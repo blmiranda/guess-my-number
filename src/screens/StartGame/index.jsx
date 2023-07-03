@@ -5,7 +5,7 @@ import PrimaryButton from '../../components/PrimaryButton';
 const StartGame = () => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput />
+      <TextInput style={styles.numberInput} maxLength={2} />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
     </View>

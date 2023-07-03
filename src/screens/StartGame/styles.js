@@ -6,7 +6,7 @@ export default StyleSheet.create({
     marginTop: 100,
     marginHorizontal: 24,
     padding: 16,
-    borderRadius: 10,
+    borderRadius: 8,
     shadowColor: '#000000',
     shadowOffset: {
       width: 0,
@@ -14,5 +14,16 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.25,
     elevation: 4,
+  },
+  numberInput: {
+    color: '#ddb52f',
+    width: 50,
+    height: 50,
+    marginVertical: 8,
+    borderBottomWidth: 2,
+    borderBottomColor: '#ddb52f',
+    fontSize: 32,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
