@@ -1,8 +1,12 @@
-import { View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import styles from './styles.js';
 
 const Background = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <LinearGradient colors={['#4e0329', '#ddb52f']} style={styles.container}>
+      {children}
+    </LinearGradient>
+  );
 };
 
 export default Background;

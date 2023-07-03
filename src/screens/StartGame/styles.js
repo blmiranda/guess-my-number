@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   inputContainer: {
-    backgroundColor: '#4e0329',
+    backgroundColor: '#3b021f',
     alignItems: 'center',
     marginTop: 100,
     marginHorizontal: 24,
