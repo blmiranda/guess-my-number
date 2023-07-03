@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   buttonOuterContainer: {
+    flex: 1,
     margin: 4,
     borderRadius: 5,
     overflow: 'hidden',
