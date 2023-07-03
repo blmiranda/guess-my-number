@@ -10,11 +10,7 @@ const PrimaryButton = ({ children }) => {
     <View style={styles.buttonOuterContainer}>
       <Pressable
         onPress={pressHandler}
-        style={({ pressed }) =>
-          pressed
-            ? [styles.buttonInnerContainer, styles.pressed]
-            : styles.buttonInnerContainer
-        }
+        style={styles.buttonInnerContainer}
         android_ripple={{ color: '#640233' }}
       >
         <Text style={styles.buttonText}>{children}</Text>
