@@ -15,7 +15,7 @@ export default function App() {
   let screen = <StartGame onPickedNumber={pickedNumberHandler} />;
 
   if (userNumber) {
-    screen = <Game />;
+    screen = <Game userNumber={userNumber} />;
   }
 
   return <Background>{screen}</Background>;
