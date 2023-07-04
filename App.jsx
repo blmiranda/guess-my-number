@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import Background from './src/components/Background';
 
 import StartGame from './src/screens/StartGame';

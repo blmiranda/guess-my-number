@@ -1,4 +1,4 @@
-import { ImageBackground } from 'react-native';
+import { ImageBackground, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import styles from './styles.js';
 
@@ -11,7 +11,7 @@ const Background = ({ children }) => {
         style={styles.container}
         imageStyle={styles.backgroundImage}
       >
-        {children}
+        <SafeAreaView style={styles.container}>{children}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
   );
