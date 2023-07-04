@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import theme from '../../global/styles/theme';
 
 export default StyleSheet.create({
   inputContainer: {
-    backgroundColor: '#3b021f',
+    backgroundColor: theme.primary800,
     alignItems: 'center',
     marginTop: 100,
     marginHorizontal: 24,
@@ -17,12 +18,12 @@ export default StyleSheet.create({
     elevation: 4,
   },
   numberInput: {
-    color: '#ddb52f',
+    color: theme.accent500,
     width: 50,
     height: 50,
     marginVertical: 8,
     borderBottomWidth: 2,
-    borderBottomColor: '#ddb52f',
+    borderBottomColor: theme.accent500,
     fontSize: 32,
     fontWeight: 'bold',
     textAlign: 'center',

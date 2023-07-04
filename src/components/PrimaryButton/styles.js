@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import theme from '../../global/styles/theme';
 
 export default StyleSheet.create({
   buttonOuterContainer: {
@@ -8,7 +9,7 @@ export default StyleSheet.create({
     overflow: 'hidden',
   },
   buttonInnerContainer: {
-    backgroundColor: '#72063c',
+    backgroundColor: theme.primary500,
     paddingVertical: 10,
     paddingHorizontal: 16,
   },

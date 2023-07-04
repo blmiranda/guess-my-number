@@ -1,10 +1,15 @@
 import { ImageBackground, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
 import styles from './styles.js';
+import theme from '../../global/styles/theme';
 
 const Background = ({ children }) => {
   return (
-    <LinearGradient colors={['#4e0329', '#ddb52f']} style={styles.container}>
+    <LinearGradient
+      colors={[theme.primary700, theme.accent500]}
+      style={styles.container}
+    >
       <ImageBackground
         source={require('../../../assets/background.png')}
         resizeMode="cover"
