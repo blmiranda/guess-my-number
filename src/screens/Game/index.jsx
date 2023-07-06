@@ -64,15 +64,22 @@ const Game = ({ userNumber, onGameIsOver }) => {
       <GuessContainer>{currentGuess}</GuessContainer>
 
       <Card>
-        <InstructionText>Higher or Lower</InstructionText>
+        <InstructionText style={styles.instructionText}>
+          Higher or Lower ?
+        </InstructionText>
 
-        <View>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-            Lower
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
-            Higher
-          </PrimaryButton>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+              Lower
+            </PrimaryButton>
+          </View>
+
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
+              Higher
+            </PrimaryButton>
+          </View>
         </View>
       </Card>
 

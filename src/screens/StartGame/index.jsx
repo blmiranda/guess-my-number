@@ -36,7 +36,7 @@ const StartGame = ({ onPickedNumber }) => {
       <Title>Guess My Number</Title>
 
       <Card>
-        <InstructionText>Enter a number!</InstructionText>
+        <InstructionText>Enter a number !</InstructionText>
 
         <TextInput
           value={enteredNumber}

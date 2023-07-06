@@ -5,4 +5,13 @@ export default StyleSheet.create({
     padding: 24,
     flex: 1,
   },
+  instructionText: {
+    marginBottom: 12,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+  },
+  buttonContainer: {
+    flex: 1,
+  },
 });
