@@ -31,4 +31,7 @@ export default StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
   },
+  buttonContainer: {
+    flex: 1,
+  },
 });
