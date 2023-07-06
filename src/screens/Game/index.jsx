@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, Alert } from 'react-native';
 import styles from './styles.js';
 
@@ -19,13 +19,15 @@ function generateRandomBetween(min, max, exclude) {
 let minBoundary = 1;
 let maxBoundary = 100;
 
-const Game = ({ userNumber }) => {
-  const initialGuess = generateRandomBetween(
-    minBoundary,
-    maxBoundary,
-    userNumber
-  );
+const Game = ({ userNumber, onGameIsOver }) => {
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+
+  useEffect(() => {
+    if (currentGuess === userNumber) {
+      onGameIsOver();
+    }
+  }, [currentGuess, userNumber, onGameIsOver]);
 
   function nextGuessHandler(direction) {
     if (
