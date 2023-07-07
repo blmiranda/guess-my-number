@@ -7,8 +7,8 @@ export default StyleSheet.create({
     padding: 12,
     borderWidth: 2,
     borderColor: 'white',
+    fontFamily: 'open-sans-bold',
     fontSize: 24,
-    fontWeight: 'bold',
     textAlign: 'center',
   },
 });

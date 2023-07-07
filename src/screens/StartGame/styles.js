@@ -14,8 +14,8 @@ export default StyleSheet.create({
     marginVertical: 8,
     borderBottomWidth: 2,
     borderBottomColor: theme.accent500,
+    fontFamily: 'open-sans-bold',
     fontSize: 32,
-    fontWeight: 'bold',
     textAlign: 'center',
   },
   buttonsContainer: {
