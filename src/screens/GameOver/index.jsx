@@ -15,7 +15,10 @@ const GameOver = ({ userNumber }) => {
         />
       </View>
 
-      <Text>Your phone needed X rounds to guess the number Y.</Text>
+      <Text style={styles.summaryText}>
+        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
+        guess the number <Text style={styles.highlight}>Y</Text>.
+      </Text>
     </View>
   );
 };
