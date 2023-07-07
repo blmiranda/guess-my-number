@@ -2,6 +2,7 @@ import { View, Text, Image } from 'react-native';
 import styles from './styles';
 
 import Title from '../../components/Title';
+import PrimaryButton from '../../components/PrimaryButton';
 
 const GameOver = ({ userNumber }) => {
   return (
@@ -19,6 +20,8 @@ const GameOver = ({ userNumber }) => {
         Your phone needed <Text style={styles.highlight}>X</Text> rounds to
         guess the number <Text style={styles.highlight}>Y</Text>.
       </Text>
+
+      <PrimaryButton>Start New Game</PrimaryButton>
     </View>
   );
 };
