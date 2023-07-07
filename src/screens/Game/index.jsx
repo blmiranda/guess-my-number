@@ -32,7 +32,7 @@ const Game = ({ userNumber, onGameIsOver }) => {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameIsOver();
+      onGameIsOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameIsOver]);
 
@@ -98,7 +98,7 @@ const Game = ({ userNumber, onGameIsOver }) => {
         </View>
       </Card>
 
-      <View>
+      <View style={styles.listContainer}>
         <FlatList
           data={guessRounds}
           renderItem={(itemData) => {
@@ -109,7 +109,7 @@ const Game = ({ userNumber, onGameIsOver }) => {
               />
             );
           }}
-          contentContainerStyle={styles.logsContainer}
+          contentContainerStyle={styles.list}
         />
       </View>
     </View>

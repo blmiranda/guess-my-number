@@ -4,7 +4,7 @@ import theme from '../../global/styles/theme';
 export default StyleSheet.create({
   listItem: {
     backgroundColor: theme.accent500,
-    width: '70%',
+    width: '100%',
 
     flexDirection: 'row',
     justifyContent: 'space-between',

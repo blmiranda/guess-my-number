@@ -14,7 +14,10 @@ export default StyleSheet.create({
   buttonContainer: {
     flex: 1,
   },
-  logsContainer: {
-    alignItems: 'center',
+  listContainer: {
+    flex: 1,
+  },
+  list: {
+    padding: 16,
   },
 });
