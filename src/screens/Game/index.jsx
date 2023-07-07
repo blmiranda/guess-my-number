@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles.js';
 
@@ -25,7 +25,9 @@ let maxBoundary = 100;
 const Game = ({ userNumber, onGameIsOver }) => {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
-  const [guessRounds, setGuessRounds] = useState([initialGuess]);
+  const [guessRounds, setGuessRounds] = useState([
+    { text: initialGuess, key: initialGuess },
+  ]);
 
   useEffect(() => {
     if (currentGuess === userNumber) {
@@ -61,8 +63,10 @@ const Game = ({ userNumber, onGameIsOver }) => {
       currentGuess
     );
 
+    const newGuessRound = { text: newGuess, key: newGuess };
+
     setCurrentGuess(newGuess);
-    setGuessRounds((prevGuessRounds) => [newGuess, ...prevGuessRounds]);
+    setGuessRounds((prevGuessRounds) => [newGuessRound, ...prevGuessRounds]);
   }
 
   return (
@@ -92,9 +96,17 @@ const Game = ({ userNumber, onGameIsOver }) => {
       </Card>
 
       <View>
-        {guessRounds.map((guess) => (
-          <Text key={guess}>{guess}</Text>
-        ))}
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => {
+            return (
+              <View style={styles.guessRoundContainer}>
+                <Text>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+          contentContainerStyle={styles.listContainer}
+        />
       </View>
     </View>
   );
