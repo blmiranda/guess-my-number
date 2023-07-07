@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   screen: {
-    backgroundColor: 'green',
     padding: 24,
     flex: 1,
   },
@@ -15,9 +14,7 @@ export default StyleSheet.create({
   buttonContainer: {
     flex: 1,
   },
-  listContainer: {},
-  guessRoundContainer: {
-    backgroundColor: 'blue',
-    padding: 50,
+  logsContainer: {
+    alignItems: 'center',
   },
 });

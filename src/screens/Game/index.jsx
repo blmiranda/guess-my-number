@@ -6,8 +6,9 @@ import styles from './styles.js';
 import Title from '../../components/Title';
 import GuessContainer from '../../components/GuessContainer';
 import PrimaryButton from '../../components/PrimaryButton';
-import Card from '../../components/Card/index.jsx';
-import InstructionText from '../../components/InstructionText/index.jsx';
+import Card from '../../components/Card';
+import InstructionText from '../../components/InstructionText';
+import GuessLogItem from '../../components/GuessLogItem';
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -69,6 +70,8 @@ const Game = ({ userNumber, onGameIsOver }) => {
     setGuessRounds((prevGuessRounds) => [newGuessRound, ...prevGuessRounds]);
   }
 
+  const guessRoundsListLength = guessRounds.length;
+
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
@@ -100,12 +103,13 @@ const Game = ({ userNumber, onGameIsOver }) => {
           data={guessRounds}
           renderItem={(itemData) => {
             return (
-              <View style={styles.guessRoundContainer}>
-                <Text>{itemData.item.text}</Text>
-              </View>
+              <GuessLogItem
+                roundNumber={guessRoundsListLength - itemData.index}
+                guess={itemData.item.text}
+              />
             );
           }}
-          contentContainerStyle={styles.listContainer}
+          contentContainerStyle={styles.logsContainer}
         />
       </View>
     </View>
