@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import theme from '../../global/styles/theme';
+
+const deviceWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   screen: {
@@ -9,13 +11,13 @@ export default StyleSheet.create({
     padding: 16,
   },
   imageContainer: {
-    width: 300,
-    height: 300,
+    width: deviceWidth < 380 ? 150 : 300,
+    height: deviceWidth < 380 ? 150 : 300,
     margin: 36,
 
     borderWidth: 3,
     borderColor: theme.primary800,
-    borderRadius: 150,
+    borderRadius: deviceWidth < 380 ? 75 : 150,
 
     overflow: 'hidden',
   },
