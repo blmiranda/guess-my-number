@@ -1,10 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import theme from '../../global/styles/theme';
+
+const deviceWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   container: {
     margin: 24,
-    padding: 24,
+    padding: deviceWidth < 380 ? 12 : 24,
     borderWidth: 4,
     borderColor: theme.accent500,
     borderRadius: 8,
@@ -13,7 +15,7 @@ export default StyleSheet.create({
   },
   text: {
     color: theme.accent500,
-    fontSize: 36,
+    fontSize: deviceWidth < 380 ? 28 : 36,
     fontWeight: 'bold',
   },
 });
