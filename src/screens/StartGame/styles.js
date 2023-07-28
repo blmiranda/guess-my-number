@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import theme from '../../global/styles/theme';
 
 export default StyleSheet.create({
+  root: {
+    flex: 1,
+  },
   screen: {
     flex: 1,
     alignItems: 'center',

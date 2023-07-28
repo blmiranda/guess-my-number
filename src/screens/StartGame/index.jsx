@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
   View,
+  ScrollView,
+  KeyboardAvoidingView,
   Text,
   TextInput,
   Alert,
@@ -41,33 +43,39 @@ const StartGame = ({ onPickedNumber }) => {
   const marginTopDistance = height < 380 ? 30 : 100;
 
   return (
-    <View style={[styles.screen, { marginTop: marginTopDistance }]}>
-      <Title>Guess My Number</Title>
+    <ScrollView style={styles.root}>
+      <KeyboardAvoidingView style={styles.root} behavior="position">
+        <View style={[styles.screen, { marginTop: marginTopDistance }]}>
+          <Title>Guess My Number</Title>
 
-      <Card>
-        <InstructionText>Enter a number !</InstructionText>
+          <Card>
+            <InstructionText>Enter a number !</InstructionText>
 
-        <TextInput
-          value={enteredNumber}
-          onChangeText={numberInputHandler}
-          style={styles.numberInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          autoCapitalize="none"
-          autoCorrect={false}
-        />
+            <TextInput
+              value={enteredNumber}
+              onChangeText={numberInputHandler}
+              style={styles.numberInput}
+              maxLength={2}
+              keyboardType="number-pad"
+              autoCapitalize="none"
+              autoCorrect={false}
+            />
 
-        <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
-          </View>
+            <View style={styles.buttonsContainer}>
+              <View style={styles.buttonContainer}>
+                <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+              </View>
 
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
-          </View>
+              <View style={styles.buttonContainer}>
+                <PrimaryButton onPress={confirmInputHandler}>
+                  Confirm
+                </PrimaryButton>
+              </View>
+            </View>
+          </Card>
         </View>
-      </Card>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
